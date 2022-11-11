@@ -1,22 +1,30 @@
 import './style.css';
-import updateTaskStatus from './To-Do-Item-Status.js'
+
+import updateTaskStatus from './To-Do-Item-Status.js';
 
 const form = document.getElementById('plus-to-list');
 const listItems = document.getElementById('to-do-list');
 const btnClear = document.querySelector('.btn-clear');
-
 const taskArr = [];
 // fixed
 const displayTask = (task) => {
   const listItem = `
   <li>
+
     <div class="check">
+
       <input type="checkbox" name="checkbox" class="checkbox" id="${task.description}">
+
       <input type="text" class="task-description" name="${task.description}" class="task-name" id="task-name" value="${task.description}">
+
     </div>
+
     <div class="actions">
+
       <i class="fa-solid fa-trash-can del"></i>
+
     </div>
+
   </li>`;
   return listItem;
 };
@@ -27,7 +35,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const listItem = displayTask(task);
     listItems.insertAdjacentHTML('beforeend', listItem);
   });
+
   const completedTasksIndex = tasks.filter((task) => task.completed === true);
+
   for (let i = 0; i < completedTasksIndex.length; i += 1) {
     for (let j = 0; j < (listItems.children).length; j += 1) {
       if (j === (completedTasksIndex[i].index - 1)) {
@@ -36,7 +46,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
-
 const addTask = (task) => {
   const taskObj = {};
   taskObj.index = taskArr.length + 1;
@@ -47,7 +56,6 @@ const addTask = (task) => {
   taskArr.push(taskObj);
   localStorage.setItem('tasks', JSON.stringify(taskArr));
 };
-
 const deleteTask = (task, element) => {
   const taskName = task.children[0].children[1].value;
   const tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -59,7 +67,6 @@ const deleteTask = (task, element) => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
   element.parentElement.parentElement.remove();
 };
-
 const editTask = (task) => {
   const tasks = JSON.parse(localStorage.getItem('tasks'));
   const taskItem = task.children[0].children[1].name;
@@ -68,7 +75,6 @@ const editTask = (task) => {
   tasks[taskIndex].description = taskName;
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
-
 listItems.addEventListener('click', (e) => {
   const task = e.target.parentElement.parentElement;
   if (e.target.classList.contains('del')) {
@@ -82,17 +88,19 @@ listItems.addEventListener('click', (e) => {
     updateTaskStatus(e.target, tasks);
   }
 });
-
 btnClear.addEventListener('click', () => {
   const tasks = JSON.parse(localStorage.getItem('tasks'));
   const filterTasks = tasks.filter((task) => task.completed === false);
+
   filterTasks.forEach((item, ind) => {
     item.index = ind + 1;
   });
+
   let updatedList = '';
   filterTasks.forEach((task) => {
     updatedList += displayTask(task);
   });
+
   listItems.innerHTML = updatedList;
   localStorage.setItem('tasks', JSON.stringify(filterTasks));
 });
