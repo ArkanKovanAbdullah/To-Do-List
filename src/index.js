@@ -1,4 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
 import './style.css';
 import updateTaskStatus from './To-Do-Item-Status.js';
 

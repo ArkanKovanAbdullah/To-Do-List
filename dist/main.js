@@ -1,4 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
