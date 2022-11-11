@@ -12,6 +12,7 @@
 - When user clicks on text he/she can change the text and update the local storage.
 - the data is preserved in the browser's memory using localStorage.
 - Project is done and finished. (Dont Acording to microverse instructions).
+- Already all completed so i am just changing the readme in this branch.
 
 
 ## Built With
