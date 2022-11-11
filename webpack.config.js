@@ -1,5 +1,5 @@
 /* eslint linebreak-style: ["error", "windows"] */
-
+// fixed
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 

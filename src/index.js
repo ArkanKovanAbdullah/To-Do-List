@@ -1,5 +1,5 @@
 import './style.css';
-import updateTaskStatus from './To-Do-Item-Status.js';
+import updateTaskStatus from './To-Do-Item-Status.js'
 
 const form = document.getElementById('plus-to-list');
 const listItems = document.getElementById('to-do-list');

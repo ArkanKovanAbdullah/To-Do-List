@@ -9,5 +9,5 @@ const updateTaskStatus = (el, tasks) => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   });
 };
-// fixed
+
 export default updateTaskStatus;
