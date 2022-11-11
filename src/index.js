@@ -6,7 +6,7 @@ const listItems = document.getElementById('to-do-list');
 const btnClear = document.querySelector('.btn-clear');
 
 const taskArr = [];
-
+// fixed
 const displayTask = (task) => {
   const listItem = `
   <li>

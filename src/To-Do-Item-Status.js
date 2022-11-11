@@ -1,4 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
 const updateTaskStatus = (el, tasks) => {
   el.addEventListener('change', (e) => {
     const taskIndex = tasks.findIndex((x) => x.description === e.target.id);
@@ -10,5 +9,5 @@ const updateTaskStatus = (el, tasks) => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   });
 };
-
+// fixed
 export default updateTaskStatus;
